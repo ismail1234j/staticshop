@@ -1,0 +1,2 @@
+# staticshop
+Static ecommerce site
