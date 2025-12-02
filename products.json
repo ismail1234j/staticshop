@@ -1,0 +1,162 @@
+[
+  {
+    "name": "Rose Gold Minimal Watch",
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800",
+    "price": 129.00,
+    "aspect": "2-3",
+    "desc": "Elegant rose gold stainless steel watch with a minimalist dial and genuine leather strap. Water-resistant up to 50m.",
+    "link": "https://example.com/product/rose-gold-minimal-watch"
+  },
+  {
+    "name": "Mirrorless Camera",
+    "image": "https://images.unsplash.com/photo-1586790170077-47f89f0a1087?w=800",
+    "price": 899.00,
+    "aspect": "1-1",
+    "desc": "24MP APS-C mirrorless camera with 4K video, fast autofocus, and compact lightweight body. Perfect for creators on the go.",
+    "link": "https://example.com/product/mirrorless-camera"
+  },
+  {
+    "name": "Polarized Aviator Sunglasses",
+    "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800",
+    "price": 149.00,
+    "aspect": "2-3",
+    "desc": "Classic aviator style with 100% UV protection, polarized lenses, and lightweight metal frame.",
+    "link": "https://example.com/product/polarized-aviator-sunglasses"
+  },
+  {
+    "name": "Cloud White Sneakers",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800",
+    "price": 139.99,
+    "aspect": "1-1",
+    "desc": "Ultra-comfortable cushioned sneakers with breathable mesh upper and durable rubber outsole.",
+    "link": "https://example.com/product/cloud-white-sneakers"
+  },
+  {
+    "name": "Tactical Urban Backpack",
+    "image": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800",
+    "price": 95.00,
+    "aspect": "2-3",
+    "desc": "30L water-resistant backpack with laptop compartment, MOLLE webbing, and multiple quick-access pockets.",
+    "link": "https://example.com/product/tactical-urban-backpack"
+  },
+  {
+    "name": "Waterproof Bluetooth Speaker",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800",
+    "price": 79.00,
+    "aspect": "1-1",
+    "desc": "IPX7 waterproof portable speaker with 12-hour battery life and rich, powerful sound.",
+    "link": "https://example.com/product/waterproof-bluetooth-speaker"
+  },
+  {
+    "name": "Matte Black Mechanical Keyboard",
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800",
+    "price": 179.00,
+    "aspect": "2-3",
+    "desc": "Full-size mechanical keyboard with hot-swappable switches, RGB backlighting, and aluminum top plate.",
+    "link": "https://example.com/product/matte-black-mechanical-keyboard"
+  },
+  {
+    "name": "Noise-Cancelling Headphones",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800",
+    "price": 299.00,
+    "aspect": "1-1",
+    "desc": "Premium over-ear headphones with active noise cancellation and up to 30 hours of battery life.",
+    "link": "https://example.com/product/noise-cancelling-headphones"
+  },
+  {
+    "name": "Leather Wallet",
+    "image": "https://images.unsplash.com/photo-1627125627256-954b5c5d37e8?w=800",
+    "price": 69.00,
+    "aspect": "2-3",
+    "desc": "Handcrafted full-grain leather bifold wallet with RFID blocking and 8 card slots.",
+    "link": "https://example.com/product/leather-wallet"
+  },
+  {
+    "name": "Smart Home Speaker",
+    "image": "https://images.unsplash.com/photo-1605648916322-8fc2c97f35a3?w=800",
+    "price": 129.00,
+    "aspect": "1-1",
+    "desc": "Voice-controlled smart speaker with premium sound and built-in virtual assistant.",
+    "link": "https://example.com/product/smart-home-speaker"
+  },
+  {
+    "name": "Vintage Film Camera",
+    "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800",
+    "price": 449.00,
+    "aspect": "2-3",
+    "desc": "Fully refurbished 35mm film camera with original lens. A timeless classic for analog lovers.",
+    "link": "https://example.com/product/vintage-film-camera"
+  },
+  {
+    "name": "Wireless Charging Pad",
+    "image": "https://images.unsplash.com/photo-1621330396173-7b8b32a5507b?w=800",
+    "price": 49.00,
+    "aspect": "1-1",
+    "desc": "Fast 15W Qi wireless charger compatible with all modern smartphones and earbuds.",
+    "link": "https://example.com/product/wireless-charging-pad"
+  },
+  {
+    "name": "Minimalist Desk Lamp",
+    "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800",
+    "price": 89.00,
+    "aspect": "2-3",
+    "desc": "Touch-controlled LED desk lamp with adjustable color temperature and brightness.",
+    "link": "https://example.com/product/minimalist-desk-lamp"
+  },
+  {
+    "name": "Fitness Smartwatch",
+    "image": "https://images.unsplash.com/photo-1579586337277-2f06e7b013b2?w=800",
+    "price": 279.00,
+    "aspect": "1-1",
+    "desc": "Advanced fitness tracker with heart rate, SpO₂, GPS, and 14-day battery life.",
+    "link": "https://example.com/product/fitness-smartwatch"
+  },
+  {
+    "name": "Ceramic Coffee Mug Set",
+    "image": "https://images.unsplash.com/photo-1571934811356-5b867e52913e?w=800",
+    "price": 42.00,
+    "aspect": "2-3",
+    "desc": "Set of four hand-glazed ceramic mugs (12oz each) in matte earth tones.",
+    "link": "https://example.com/product/ceramic-coffee-mug-set"
+  },
+  {
+    "name": "Portable SSD 1TB",
+    "image": "https://images.unsplash.com/photo-1606149059548-8b0e0c4bb8da?w=800",
+    "price": 119.00,
+    "aspect": "1-1",
+    "desc": "Ultra-fast 1TB USB-C portable SSD with read/write speeds up to 1050 MB/s.",
+    "link": "https://example.com/product/portable-ssd-1tb"
+  },
+  {
+    "name": "Premium Yoga Mat",
+    "image": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=800",
+    "price": 79.00,
+    "aspect": "2-3",
+    "desc": "Eco-friendly TPE yoga mat (6mm thick) with non-slip surface and alignment lines.",
+    "link": "https://example.com/product/premium-yoga-mat"
+  },
+  {
+    "name": "Ergonomic Office Chair",
+    "image": "https://images.unsplash.com/photo-1598300041009-0c8f9e8e2e0a?w=800",
+    "price": 399.00,
+    "aspect": "1-1",
+    "desc": "Fully adjustable mesh office chair with lumbar support and breathable backrest.",
+    "link": "https://example.com/product/ergonomic-office-chair"
+  },
+  {
+    "name": "Stainless Steel Water Bottle",
+    "image": "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=800",
+    "price": 35.00,
+    "aspect": "2-3",
+    "desc": "Double-wall vacuum insulated bottle keeps drinks cold for 24h or hot for 12h.",
+    "link": "https://example.com/product/stainless-steel-water-bottle"
+  },
+  {
+    "name": "4K Webcam",
+    "image": "https://images.unsplash.com/photo-1587831990711-23d8f7e6f9e9?w=800",
+    "price": 89.00,
+    "aspect": "1-1",
+    "desc": "Plug-and-play 4K webcam with autofocus, stereo microphones, and privacy shutter.",
+    "link": "https://example.com/product/4k-webcam"
+  }
+]

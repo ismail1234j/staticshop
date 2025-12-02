@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Shop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #ff6b6b;
+      --text: #1a1a1a;
+      --bg: #f9f9f9;
+    }
+/* Beautiful Buy Now button */
+.buy-button {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: #ff6b6b;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 16px;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.buy-button:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+}
+
+.buy-button:active {
+  transform: translateY(0);
+}
+    * { box-sizing: border-box; }
+    body, html {
+      margin: 0; padding: 0; height: 100vh; overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+    }
+    .container {
+      max-width: 480px; height: 100vh; margin: 0 auto;
+      background: white; border-radius: 20px; box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+      overflow: hidden; display: flex; flex-direction: column;
+      position: relative;
+    }
+    .header {
+      padding: 20px 20px 0; text-align: center; font-size: 24px; font-weight: 700; color: var(--text);
+    }
+    .currency-note {
+      text-align: center; font-size: 12px; color: #666; margin: 4px 0 10px;
+    }
+    .top-bar {
+      display: flex; align-items: center; padding: 0 16px; margin-bottom: 16px; gap: 10px;
+    }
+    .search-wrapper {
+      flex: 1; position: relative;
+    }
+    .search-wrapper input {
+      width: 100%; padding: 14px 14px 14px 44px;
+      border: none; background: #f0f0f0; border-radius: 30px; font-size: 16px;
+    }
+    .search-wrapper::before {
+      content: "🔎"; position: absolute; left: 16px; top: 50%;
+      transform: translateY(-50%); font-size: 18px; opacity: 0.5;
+    }
+    .content {
+      flex: 1; overflow-y: auto; padding-bottom: 30px;
+      -webkit-mask-image: linear-gradient(to bottom, black 92%, transparent 100%);
+    }
+    .masonry {
+      column-count: 2; column-gap: 14px; padding: 0 16px;
+    }
+    .card {
+      break-inside: avoid; margin-bottom: 16px; border-radius: 18px;
+      overflow: hidden; background: white; box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+    .card:hover {
+      /* Subtle hover effect */
+      box-shadow: 0 3px 18px rgba(0,0,0,0.13);
+      /* Remove scale and translation */
+      transform: none;
+    }
+    .image {
+      width: 100%; background: #eee; overflow: hidden;
+    }
+    .ratio-2-3 { aspect-ratio: 2 / 3; }
+    .ratio-1-1 { aspect-ratio: 1 / 1; }
+    .image img {
+      width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;
+    }
+    .card:hover .image img { transform: none; }
+    .info { padding: 14px; }
+    .product-name {
+      margin: 0 0 6px; font-size: 14.5px; font-weight: 600; line-height: 1.4;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .price { font-size: 17px; font-weight: 800; color: #222; }
+
+    /* Modal */
+    .modal {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7); display: none; align-items: center; justify-content: center;
+      z-index: 1000; animation: fadeIn 0.3s ease;
+    }
+    .modal-content {
+      background: white; width: 90%; max-width: 420px; border-radius: 24px;
+      overflow: hidden; max-height: 90vh; display: flex; flex-direction: column;
+    }
+   .modal-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  max-height: 50vh;              /* This caps the image height */
+  flex-shrink: 0;
+}
+.modal-body {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;                    /* Keeps scrolling when needed */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;               /* Firefox: thin scrollbar */
+}
+
+/* Chrome/Edge/Safari: hide scrollbar but keep functionality */
+.modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.modal-body::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.3);
+  border-radius: 3px;
+}
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.5);
+}
+    .modal-title { font-size: 22px; font-weight: 700; margin: 0 0 12px; }
+    .modal-desc { color: #444; line-height: 1.6; margin-bottom: 20px; }
+    .modal-price { font-size: 28px; font-weight: 800; color: #222; margin-bottom: 20px; }
+    /* Remove .add-to-cart button styles */
+    .add-to-cart {
+      display: none;
+    }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    @media (max-width: 520px) {
+      .container { border-radius: 0; }
+      .masonry { column-count: 1; padding: 0 8px; column-gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">My Shop</div>
+    <div class="currency-note" id="currencyNote">Loading currency...</div>
+
+    <div class="top-bar">
+      <div class="search-wrapper">
+        <input id="search" type="text" placeholder="Search products...">
+      </div>
+      <!-- Cart button removed -->
+    </div>
+
+    <div class="content">
+      <div class="masonry" id="products"></div>
+    </div>
+  </div>
+
+<!-- Product Modal -->
+<div class="modal" id="productModal">
+  <div class="modal-content">
+    <img id="modalImg" class="modal-img" alt="Product">
+    <div class="modal-body">
+      <h2 id="modalTitle" class="modal-title"></h2>
+      <p id="modalDesc" class="modal-desc"></p>
+      <div id="modalPrice" class="modal-price"></div>
+      
+      <a href="#" id="buyButton" class="buy-button" target="_blank" rel="noopener">
+        Buy Now
+      </a>
+    </div>
+  </div>
+</div>
+
+  <script>
+    let products = [];
+    // Cart removed
+    let currentCurrency = 'GBP';
+    let currentSymbol = '£';
+    let gbpToTargetRate = 1;
+
+    const currencySymbols = { GBP: '£', USD: '$', EUR: '€', CAD: 'C$', AUD: 'A$', JPY: '¥', INR: '₹', BRL: 'R$', RUB: '₽', KRW: '₩', CNY: '¥', MXN: '$', CHF: 'CHF', SEK: 'kr', NZD: 'NZ$', NOK: 'kr', PLN: 'zł', TRY: '₺', ZAR: 'R', AED: 'د.إ' };
+
+    function formatPrice(priceGBP) {
+      const converted = priceGBP * gbpToTargetRate;
+      return `${currentSymbol}${converted.toFixed(2)}`;
+    }
+
+    function renderProducts(list) {
+      const cont = document.getElementById('products');
+      cont.innerHTML = '';
+      list.forEach(prod => {
+        const ratio = prod.aspect === "2-3" ? "ratio-2-3" : "ratio-1-1";
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="image ${ratio}">
+            <img src="${prod.image}" alt="${prod.name}" loading="lazy">
+          </div>
+          <div class="info">
+            <h3 class="product-name">${prod.name}</h3>
+            <div class="price">${formatPrice(prod.price)}</div>
+          </div>`;
+        card.onclick = () => openModal(prod);
+        cont.appendChild(card);
+      });
+    }
+
+    async function detectCurrency() {
+      try {
+        const geo = await fetch('https://ipapi.co/json/').then(r => r.json());
+        let currency = geo.currency || 'GBP';
+        const map = { US:'USD', CA:'CAD', AU:'AUD', JP:'JPY', IN:'INR', BR:'BRL', RU:'RUB', KR:'KRW', CN:'CNY', MX:'MXN', CH:'CHF' };
+        currency = map[geo.country_code] || currency;
+
+        const rates = await fetch('https://api.exchangerate-api.com/v4/latest/GBP').then(r => r.json());
+        const rate = rates.rates[currency];
+        if (rate) {
+          currentCurrency = currency;
+          currentSymbol = currencySymbols[currency] || currency;
+          gbpToTargetRate = rate;
+          document.getElementById('currencyNote').textContent = `Prices in ${currency} (${currentSymbol})`;
+          renderProducts(products);
+        }
+      } catch (e) {
+        document.getElementById('currencyNote').textContent = "Prices in GBP (£)";
+      }
+    }
+
+function openModal(prod) {
+  document.getElementById('modalImg').src = prod.image;
+  document.getElementById('modalTitle').textContent = prod.name;
+  document.getElementById('modalDesc').textContent = prod.desc || 'No description available.';
+  document.getElementById('modalPrice').textContent = formatPrice(prod.price);
+  
+  // Update Buy button link
+  const buyBtn = document.getElementById('buyButton');
+  if (prod.link && prod.link !== '') {
+    buyBtn.href = prod.link;
+    buyBtn.style.display = 'block';
+  } else {
+    buyBtn.style.display = 'none';
+  }
+  
+  document.getElementById('productModal').style.display = 'flex';
+}
+
+    function closeModal() {
+      document.getElementById('productModal').style.display = 'none';
+    }
+
+    // Removed all cart logic, cart button handlers, checkout-related JS
+
+    // Search
+    document.getElementById('search').addEventListener('input', e => {
+      const term = e.target.value.toLowerCase();
+      const filtered = products.filter(p => p.name.toLowerCase().includes(term));
+      renderProducts(filtered);
+    });
+
+    // Close modal when clicking outside
+    document.getElementById('productModal').onclick = (e) => {
+      if (e.target === document.getElementById('productModal')) closeModal();
+    };
+
+    // Load products
+    async function loadProducts() {
+      try {
+        const resp = await fetch('products.json');
+        products = await resp.json();
+        renderProducts(products);
+        detectCurrency();
+      } catch (e) {
+        document.getElementById('products').innerHTML = '<p style="text-align:center;padding:50px;color:#999;">Failed to load products.</p>';
+      }
+    }
+
+    loadProducts();
+  </script>
+</body>
+</html>
